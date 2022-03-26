@@ -5,5 +5,5 @@ from . import models
 class CitaSerializer(serializers.ModelSerializer):
 
     class Meta:
-        fields = ('id', 'estudiante','ubicacion', 'time',)
+        fields = ('id', 'estudiante','horario','psicologo','ubicacion',)
         model = models.Cita
