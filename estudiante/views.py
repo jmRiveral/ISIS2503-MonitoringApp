@@ -10,7 +10,7 @@ def estudiante_list(request):
     context = {
         'estudiante_list': estudiantes
     }
-    return render(request, 'Estudiante/estudiantes.html', context)
+    return render(request, 'Estudiante/horario.html', context)
 
 def estudiante_create(request):
     if request.method == 'POST':

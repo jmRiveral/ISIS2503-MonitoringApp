@@ -1,5 +1,5 @@
 from django.db import models
-from estudiantes.models import Estudiante
+from horario.models import Estudiante
 
 class Cita(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE, default=None)
