@@ -7,11 +7,11 @@ class CitaForm(forms.ModelForm):
         fields = [
             'estudiante',
             'ubicacion',
-            'dateTime',
+            'horario',
         ]
 
         labels = {
             'estudiante' : 'Estudiante',
             'ubicacion' : 'Ubicacion',
-            'dateTime' : 'Date Time',
+            'horario' : 'Horario',
         }
