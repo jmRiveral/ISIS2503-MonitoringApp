@@ -5,14 +5,14 @@ from django.urls import reverse
 from .forms import  PsicologoForm
 from .logic.psicologo_logic import get_psicologos, create_psicologo
 
-def estudiante_list(request):
+def psicologo_list(request):
     psicologos = get_psicologos()
     context = {
-        'psicologos_list': psicologos
+        'psicologo_list': psicologos
     }
     return render(request, 'Psicologo/horario.html', context)
 
-def estudiante_create(request):
+def psicologo_create(request):
     if request.method == 'POST':
         form = PsicologoForm(request.POST)
         if form.is_valid():

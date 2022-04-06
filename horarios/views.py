@@ -5,12 +5,12 @@ from django.urls import reverse
 from .forms import HorarioForm
 from .logic.horario_logic import get_horarios, create_horario
 
-def estudiante_list(request):
+def horario_list(request):
     horarios = get_horarios()
     context = {
         'horario_list': horarios
     }
-    return render(request, 'Horario/horario.html', context)
+    return render(request, 'Horario/horarios.html', context)
 
 def horario_create(request):
     if request.method == 'POST':

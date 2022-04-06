@@ -5,10 +5,8 @@ class HorarioForm(forms.ModelForm):
     class Meta:
         model = Horario
         fields = [
-            'start',
-            'end',
+            'dateTime',
         ]
         labels = {
-            'start': 'Start',
-            'end': 'End',
+            'dateTime': 'Date Time',
         }

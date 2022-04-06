@@ -5,6 +5,6 @@ def get_estudiantes():
     return (queryset)
 
 def create_estudiante(form):
-    cita = form.save()
-    cita.save()
+    e = form.save()
+    e.save()
     return ()

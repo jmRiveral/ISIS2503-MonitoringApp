@@ -1,10 +1,12 @@
 from django.db import models
-from horario.models import Estudiante
+from estudiantes.models import Estudiante
+from horarios.models import Horario
+from psicologos.models import Psicologo
 
 class Cita(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE, default=None)
-    # horario = models.ForeignKey(Horario, on_delete=models.CASCADE, default=None)
-    # psicologo = models.ForeignKey(Psicologo, on_delete=models.CASCADE, default=None)
+    horario = models.ForeignKey(Horario, on_delete=models.CASCADE, default=None)
+    psicologo = models.ForeignKey(Psicologo, on_delete=models.CASCADE, default=None)
     ubicacion = models.CharField(max_length=50)
 
     # dateTime pasa a ser atributo de Horario
