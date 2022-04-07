@@ -6,14 +6,13 @@ class CitaForm(forms.ModelForm):
         model = Cita
         fields = [
             'estudiante',
-            'horario',
             'psicologo',
-            'ubicacion',
+            'horario',
+            'tipo'
         ]
-
         labels = {
             'estudiante' : 'Estudiante',
-            'horario' : 'Horario',
             'psicologo' : 'Psicologo',
-            'ubicacion' : 'Ubicacion',
+            'horario' : 'Horario',
+            'tipo': 'Tipo'
         }

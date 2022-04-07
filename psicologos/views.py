@@ -10,7 +10,7 @@ def psicologo_list(request):
     context = {
         'psicologo_list': psicologos
     }
-    return render(request, 'Psicologo/horario.html', context)
+    return render(request, 'Psicologo/psicologos.html', context)
 
 def psicologo_create(request):
     if request.method == 'POST':
