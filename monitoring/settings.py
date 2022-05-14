@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'estudiantes',
     'horarios',
     'psicologos',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -80,10 +81,10 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'estrellita',
-        'USER': 'juli',
-        'PASSWORD': 'aaa',
-        'HOST': 'localhost',
+        'NAME': 'estrellitaDB',
+        'USER': 'estrellitaUser',
+        'PASSWORD': 'estrellita',
+        'HOST': 'estrellita.cbyeffdq2ruq.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -91,7 +92,25 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
+LOGIN_URL="/login/authO"
+LOGIN_REDIRECT_URL="/"
+LOGOUT_REDIRECT_URL="https://educacionestrella.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F18.205.151.224:8000"
 
+SOCIAL_AUTH_TRAILING_SLASH=False # Remove end slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN='educacionestrella.us.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY='rLjMODrsjswfGSkRWbtcpOkPbY3vVisL'
+SOCIAL_AUTH_AUTH0_SECRET='Ss9dRiUolvi4CQti_xjq26_Xy5fgZyowUG1Sdt68cMUoeqxebkMawCphpxnQAcxv'
+
+SOCIAL_AUTH_AUTH0_SCOPE=[
+    'openid',
+    'profile',
+    'email',
+    'role',
+]
+AUTHENTICATION_BACKENDS={
+    'monitoring.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend',
+}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

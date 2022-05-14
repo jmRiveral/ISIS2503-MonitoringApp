@@ -19,9 +19,11 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('', include('citas.urls')),
-    path('', include('estudiantes.urls')),
-    path('', include('horarios.urls')),
-    path('', include('psicologos.urls')),
+    path("", views.index),
+    path("", include('citas.urls')),
+    path("", include('estudiantes.urls')),
+    path("", include('horarios.urls')),
+    path("", include('psicologos.urls')),
+    path(r"", include('django.contrib.auth.urls')),
+    path(r"", include('social_django.urls')), 
 ]
