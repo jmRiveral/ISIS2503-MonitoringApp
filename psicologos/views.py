@@ -5,24 +5,24 @@ from django.urls import reverse
 from .forms import  PsicologoForm
 from .logic.psicologo_logic import get_psicologos, create_psicologo
 from django.contrib.auth.decorators import login_required
-from monitoring.auth0backend import getRole
+#from monitoring.auth0backend import getRole
 
-@login_required
+#@login_required
 def psicologo_list(request):
-    role = getRole(request)
-    if role == "Administrador":
+    #role = getRole(request)
+    #if role == "Administrador":
         psicologos = get_psicologos()
         context = {
             'psicologo_list': psicologos
         }
         return render(request, 'Psicologo/psicologos.html', context)
-    else:
-        return HttpResponse("Unauthorized User")
+    #else:
+        #return HttpResponse("Unauthorized User")
 
-@login_required
+#@login_required
 def psicologo_create(request):
-    role = getRole(request)
-    if role == "Administrador":
+    #role = getRole(request)
+    #if role == "Administrador":
         if request.method == 'POST':
             form = PsicologoForm(request.POST)
             if form.is_valid():
@@ -38,5 +38,5 @@ def psicologo_create(request):
             'form': form,
         }
         return render(request, 'Psicologo/psicologoCreate.html', context)
-    else:
-        return HttpResponse("Unauthorized User")
+    #else:
+        #return HttpResponse("Unauthorized User")

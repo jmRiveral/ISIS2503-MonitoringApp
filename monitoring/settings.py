@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'estrellitaDB',
-        'USER': 'estrellitaUser',
-        'PASSWORD': 'estrellita',
-        'HOST': 'estrellita.cbyeffdq2ruq.us-east-1.rds.amazonaws.com',
+        'NAME': 'acoDB',
+        'USER': 'acoUser',
+        'PASSWORD': 'acoestrella',
+        'HOST': 'aco-db.cmrwk7dzawtz.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -92,7 +92,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
-LOGIN_URL="/login/authO"
+""" LOGIN_URL="/login/authO"
 LOGIN_REDIRECT_URL="/"
 LOGOUT_REDIRECT_URL="https://educacionestrella.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F18.205.151.224:8000"
 
@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
+] """
 
 
 # Internationalization

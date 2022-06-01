@@ -5,24 +5,24 @@ from django.urls import reverse
 from .forms import EstudianteForm
 from .logic.estudiante_logic import get_estudiantes, create_estudiante
 from django.contrib.auth.decorators import login_required
-from monitoring.auth0backend import getRole
+# from monitoring.auth0backend import getRole
 
-@login_required
+# @login_required
 def estudiante_list(request):
-    role = getRole(request)
-    if role == "Psicologo" or role == "Administrador":
+    #role = getRole(request)
+    #if role == "Psicologo" or role == "Administrador":
         estudiantes = get_estudiantes()
         context = {
             'estudiante_list': estudiantes
         }
         return render(request, 'Estudiante/estudiantes.html', context)
-    else:
-        return HttpResponse("Unauthorized User")
+    #else:
+        #return HttpResponse("Unauthorized User")
 
-@login_required
+#@login_required
 def estudiante_create(request):
-    role = getRole(request)
-    if role == "Administrador":
+    #role = getRole(request)
+    #if role == "Administrador":
         if request.method == 'POST':
             form = EstudianteForm(request.POST)
             if form.is_valid():
@@ -38,5 +38,5 @@ def estudiante_create(request):
             'form': form,
         }
         return render(request, 'Estudiante/estudianteCreate.html', context)
-    else:
-        return HttpResponse("Unauthorized User")
+    #else:
+        #return HttpResponse("Unauthorized User")
